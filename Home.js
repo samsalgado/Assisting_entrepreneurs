@@ -1,6 +1,5 @@
 import YouTubePlayer from 'react-native-youtube-iframe';
 import React, {useEffect, useState} from 'react';
-import LazyPlayer from './LazyPlayer';
 import { ImageBackground, StyleSheet, ScrollView, Text, Image, View } from 'react-native';
 const image = require('./images/captura.png');
 const books = require('./images/books.png');
@@ -13,7 +12,6 @@ const Home = () => {
     useEffect(() => {
       const fetchVideoIds = async () => {
         const videoIdsArray = [
-          'FyKNiVBCc5g',
           'biX1mDB9hlc',
           'az6NibAUf7Y',
           '5UrNXRsYAvU',
@@ -132,7 +130,7 @@ const Home = () => {
           <ScrollView style={styles.divWrapper}>
           <Image source={tax} style={{ width: 390, resizeMode: 'stretch', height: 200 }} />
             {videoIds.map((videoId, index) => (
-              <LazyPlayer key={index} width={400} height={400} play={false} videoId={videoId} />
+              <YouTubePlayer key={index} width={400} height={400} play={false} videoId={videoId} />
             ))}
             <Image source={tools} style={{ width: 400, resizeMode: 'stretch', height: 200 }} />
             <Image source={books} style={{ width: 400, resizeMode: 'stretch', height: 200 }} />
@@ -188,7 +186,7 @@ const Home = () => {
     text: {
       fontSize:24,
       textAlign:'center',
-      marginTop:100,
+      marginTop:60,
       fontWeight: 'bold',
       alignContent:'center',
     },
@@ -198,7 +196,7 @@ const Home = () => {
     },
   
     divWrapper:{
-      marginTop:280,
+      marginTop:270,
     },
   });
   export default Home;

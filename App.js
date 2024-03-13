@@ -6,12 +6,13 @@ import Forum from './src/Forum';
 import { createStackNavigator } from '@react-navigation/stack';
 import Doc from './src/Doc';
 import Home from './Home';
-import Video from './Video';
 import MyModal from './src/modal';
 import InvestModal from './src/invest';
 const eqrp = require('./images/eqrp.png');
 const deed = require('./images/deed.png');
- const Advice = () => (
+
+
+const Advice = () => (
   <ImageBackground 
   source={require('./images/background.png')}
   style={styles.background}
@@ -26,7 +27,7 @@ const deed = require('./images/deed.png');
       </View>
       </ImageBackground>
  );
-
+  
 const  EQRP = () => (
   <ImageBackground 
   source={require('./images/background.png')}
@@ -50,7 +51,6 @@ const AppNav = () => (
     <Tab.Screen name = "Home" component={Home} />
     <Tab.Screen name = "Investing" component={EQRP} />
     <Tab.Screen name = "Advice" component={Advice} />
-    <Tab.Screen name= "Video" component={Content} />
   </Tab.Navigator>
 );
 const App = () => {
@@ -130,7 +130,6 @@ const styles = StyleSheet.create({
     height: 300,
     flex:1,
   },
-
   perc: {
     color: 'white',
     paddingHorizontal: 'auto',
@@ -297,7 +296,13 @@ searchInput: {
     fontSize:24,
     textAlign:'center',
   },
-
+  feed: {
+    fontSize:24,
+    textAlign:'center',
+    marginTop:10,
+    fontWeight: 'bold',
+    alignContent:'center',
+  },
   divWrapper:{
     marginTop:280,
   },
